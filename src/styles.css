@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --light-color: #ffffff;
+  --light-color-transparency: #ffffff33;
+  --middel-color-transparency: #ffffff99;
+  --dark-color: #000000;
+  --dark-color-transparency: #00000080;
+  --error-color: #e41818;
+}
+
+body {
+  margin: 0;
+}
