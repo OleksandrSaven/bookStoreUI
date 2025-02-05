@@ -1,21 +1,21 @@
 <div class="full-screen-container">
   <div class="login-container">
-    <form [formGroup]="form" (ngSubmit)="omSubmit()" class="login-form">
-      <h1 class="login-title">Welcome</h1>
+    <form [formGroup]="form" (ngSubmit)="omSubmit()" class="form">
+      <h1 class="title">Welcome</h1>
 
-      <div class="login-input-group" [ngClass]="{'error': error}">
+      <div class="form-input-group" [ngClass]="{'error': error}">
         <label>Email:</label>
         <input formControlName="email" type="email" placeholder="email" id="email" (focus)="resetError()" >
       </div>
 
-      <div class="login-input-group" [ngClass]="{'error': error}" >
+      <div class="form-input-group" [ngClass]="{'error': error}" >
         <label>Password:</label>
         <input formControlName="password" type="password" placeholder="password" id="password" (focus)="resetError()">
         <span class="msg">{{errorMessage}}</span>
       </div>
 
-      <button class="login-button" type="submit">Login</button>
-      <span class="login-registration">Don't have an account yet? <a href="/register">Sing-up</a></span>
+      <button class="button" type="submit">Login</button>
+      <span class="bottom-text">Don't have an account yet? <a href="/registration">Sing-up</a></span>
     </form>
   </div>
 </div>

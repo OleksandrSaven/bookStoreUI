@@ -6,8 +6,104 @@
   --dark-color: #000000;
   --dark-color-transparency: #00000080;
   --error-color: #e41818;
+  --success-color: #4CAF50;
 }
 
 body {
   margin: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;;
+  color: var(--light-color)
+}
+
+.button {
+  background-color: var(--light-color-transparency);
+  margin-top: 20px;
+  padding: .6em 1em;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
+  box-shadow: 0 0 0 1px var(--middel-color-transparency);
+  outline: none;
+  cursor: pointer;
+}
+
+.bottom-text {
+  font-size: 12px;
+  margin-top: 10px;
+  color: var(--light-color);
+}
+
+.button:hover {
+  background-color: var(--middel-color-transparency);
+}
+
+.button:focus {
+  box-shadow: 0 0 0 2px var(--light-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-input-group{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-input-group label {
+  color: var(--light-color);
+  font-weight: lighter;
+}
+
+.form-input-group input {
+  font-size: 14px;
+  padding: 10px;
+  background-color: var(--light-color-transparency);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: var(--light-color);
+  box-shadow: 0 0 0 2px var(--middel-color-transparency);
+}
+
+.form-input-group.error input {
+  box-shadow: 0 0 0 1px var(--error-color);
+}
+
+.form-input-group.success input {
+  box-shadow: 0 0 0 1px var(--success-color);
+}
+
+
+.form-input-group input:focus {
+  box-shadow: 0 0 0 2px var(--light-color);
+}
+
+.form-input-group .msg {
+  display: none;
+  font-size: 0.75rem;
+}
+
+.form-input-group.success .msg,
+.form-input-group.error .msg {
+  display: block;
+}
+
+.form-input-group.error .msg {
+  color: var(--error-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.65rem;
 }

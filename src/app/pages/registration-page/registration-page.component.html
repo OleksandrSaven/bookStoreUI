@@ -1,0 +1,68 @@
+<div class="full-screen-registration-container">
+  <div class="registration-container">
+    <form [formGroup]="form" (ngSubmit)="onRegistrationSubmit()"
+          class="form">
+      <h1 class="title">Create Account</h1>
+      <div class="form-input-group" [ngClass]="{
+           'error': form.controls.firstName.invalid && form.controls.firstName.dirty,
+           'success': form.controls.firstName.valid && form.controls.firstName.dirty
+           }">
+        <label>First name:</label>
+        <input formControlName="firstName" placeholder="Rebeka">
+        <span class="msg"></span>
+      </div>
+
+      <div class="form-input-group" [ngClass]="{
+      'error' : form.controls['lastName'].invalid && form.controls['lastName'].dirty,
+      'success': form.controls['lastName'].valid && form.controls['lastName'].dirty
+      }">
+        <label>Last name:</label>
+        <input formControlName="lastName" placeholder="Stranger">
+        <span class="msg"></span>
+      </div>
+
+      <div class="form-input-group" [ngClass]="{
+           'error': (form.controls['email'].invalid && form.controls['email'].dirty) || emailError,
+           'success': form.controls['email'].valid && form.controls['email'].dirty && emailError === null
+           }">
+        <label>Email:</label>
+        <input formControlName="email" type="email" (focus)="errorReset()" placeholder="rebeka_strange@google.com">
+        <span class="error-message">{{emailError}}</span>
+      </div>
+
+      <div class="form-input-group" [ngClass]="{
+      'error': form.controls['password'].invalid && form.controls['password'].dirty,
+       'success': form.controls['password'].valid && form.controls['password'].dirty
+      }">
+        <label>Password:</label>
+        <input formControlName="password" type="password" placeholder="********">
+        <span class="msg"></span>
+      </div>
+
+      <div class="form-input-group" [ngClass]="{
+        'error': form.hasError('passwordMismatch' ) && form.get('repeatPassword')?.touched || (form.controls['repeatPassword'].invalid && form.controls['repeatPassword'].dirty),
+        'success': !form.hasError('passwordMismatch' ) && form.get('repeatPassword')?.touched && (form.controls['repeatPassword'].valid && form.controls['repeatPassword'].dirty)
+      }">
+        <label>Confirm password:</label>
+        <input formControlName="repeatPassword" type="password" placeholder="*******">
+        <div *ngIf="form.hasError('passwordMismatch') && form.get('repeatPassword')?.touched" class="error-message" >
+          Passwords do not match!
+        </div>
+      </div>
+
+      <div class="form-input-group" [ngClass]="{
+      'success': form.controls.shippingAddress.touched
+      }" >
+        <label>Address:</label>
+        <input formControlName="shippingAddress" placeholder="Wales Cardiff 2/98">
+        <span class="msg"></span>
+      </div>
+
+      <button type="submit" class="button">Submit</button>
+      <span class="bottom-text">Already registered?
+        <a href="/login">Sign-in</a>
+      </span>
+
+    </form>
+  </div>
+</div>
