@@ -1,25 +1,28 @@
-<div class="book-card-container">
-  <div class="book-title">
-   <strong>Book title</strong>
-  </div>
+@if (book) {
 
-  <div class="book-image">
-    <img  class="img" src="/assets/images/registration-background.jpg" alt="Avatar">
-  </div>
+  <div class="book-card-container">
+    <div class="book-title">
+      <strong>{{book.title}}</strong>
+    </div>
 
-  <div class="book-author">
-    <span>Book author</span>
-  </div>
+    <div class="book-image">
+      <img class="img" [src] ="book.coverImage" [alt]="book.title">
+    </div>
 
-  <div class="book-price">
-    Last price:
-  </div>
+    <div class="book-author">
+      <span>{{book.author}}</span>
+    </div>
 
-  <div class="book-description">
-    Our company is looking for talented professionals to join our team and to work full-time as Junior+ Java Engineer at our Kyiv or Kharkiv office
-  </div>
+    <div class="book-price">
+      Last price: {{book.price}}$
+    </div>
 
-  <div class="book-card-button">
-    <button class="button">Add to cart</button>
+    <div class="book-description">
+      {{book.description}}
+    </div>
+
+    <div class="book-card-button">
+      <button class="button">Add to cart</button>
+    </div>
   </div>
-</div>
+}

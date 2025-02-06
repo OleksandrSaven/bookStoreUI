@@ -1,3 +1,7 @@
+:host{
+  display: contents;
+
+}
 .book-card-container {
   display: flex;
   flex-direction: column;
@@ -7,7 +11,7 @@
   max-width: 300px;
   max-height: 500px;
   border-radius: 20px;
-  padding: 5px;
+  padding: 10px;
   background-image: url("/assets/images/book-image-background.jpg");
   background-color: var(--dark-color);
   color: var(--light-color);
@@ -29,8 +33,11 @@
 
 .book-description {
   display: flex;
-  height: 130px;
+  height: 100px;
   overflow: hidden;
+  font-size: 14px;
+  text-align: justify;
+  padding: 10px;
 }
 
 .book-price {
@@ -44,9 +51,13 @@
 }
 
 .book-title {
-  font-size: 20px;
+  font-size: 18px;
+  text-align: center;
 }
 
 .book-card-button {
-  padding-bottom: 10px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  padding: 5px;
 }

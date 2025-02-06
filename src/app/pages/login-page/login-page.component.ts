@@ -2,6 +2,8 @@ import {Component, inject} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../auth/auth.service';
 import {NgClass} from '@angular/common';
+import {Router} from '@angular/router';
+import {routes} from '../../app.routes';
 
 @Component({
   selector: 'app-login-page',
@@ -11,6 +13,7 @@ import {NgClass} from '@angular/common';
 })
 export class LoginPageComponent {
   authService = inject(AuthService);
+  router = inject(Router);
   errorMessage: string = '';
   error: boolean = false;
 
@@ -30,8 +33,9 @@ export class LoginPageComponent {
       //@ts-ignore
       this.authService.login(this.form.value).subscribe({
           next: result => {
-            console.log(result);
-            // redirect to main page
+            // console.log(result);
+            this.router.navigate(['']);
+
           },
           error: err => {
             this.error = true;
