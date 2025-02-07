@@ -5,7 +5,7 @@ import {BookProfileComponent} from './common-ui/book-profile/book-profile.compon
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LoginPageComponent, BookProfileComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

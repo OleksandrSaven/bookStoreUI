@@ -4,6 +4,7 @@ import {LoginResponse} from '../data/interfaces/login-response.interface';
 import {tap} from 'rxjs';
 import {RegistrationResponse} from '../data/interfaces/registration-response.interface';
 import {CookieService} from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import {CookieService} from 'ngx-cookie-service';
 export class AuthService {
   http = inject(HttpClient);
   cookieService = inject(CookieService)
+  router = inject(Router);
   baseUrl = 'http://localhost:8081/api/auth';
   token: string | null = null;
 
@@ -29,6 +31,13 @@ export class AuthService {
         this.token = value.token;
         this.cookieService.set('token', this.token);
       }));
+  }
+
+  logout() {
+    this.token = null;
+    this.cookieService.deleteAll()
+    this.router.navigate(['/login']);
+
   }
 
   registration(payload: {

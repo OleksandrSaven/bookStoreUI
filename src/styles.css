@@ -75,6 +75,7 @@ body {
   border-radius: 5px;
   color: var(--light-color);
   box-shadow: 0 0 0 2px var(--middel-color-transparency);
+  width: 95%;
 }
 
 .form-input-group.error input {
@@ -108,3 +109,27 @@ body {
   color: var(--error-color);
   font-size: 0.65rem;
 }
+
+.password-eye-btn{
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-eye-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+
