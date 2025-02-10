@@ -1,5 +1,19 @@
-@for (book of books; track book.id) {
-  <app-book-profile
-    [book]="book"
-  ></app-book-profile>
-}
+<div>
+  <div class="paginator-wrapper">
+    <mat-paginator
+      [length]="totalElements"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      [pageIndex]="currentPage"
+      (page)="handlePageEvent($event)"
+    ></mat-paginator>
+
+  </div>
+  <div class="book-wrapper">
+    @for (book of books; track book.id) {
+      <app-book-profile
+        [book]="book"
+      ></app-book-profile>
+    }
+  </div>
+</div>

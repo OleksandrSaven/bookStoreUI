@@ -1,6 +1,6 @@
 :host{
   display: grid;
-  border: 1px solid red;
-  height: 50px;
-  background-color: gray;
+  height: 70px;
+  background-color: var(--dark-color);
+  color: var(--light-color);
   }

@@ -1,7 +1,13 @@
-:host{
+.paginator-wrapper {
+  padding: 5px;
+  text-align: center;
+}
+
+.book-wrapper{
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
-  justify-content: center;
-  gap: 25px
+  padding-left: 10px;
+
+  justify-content: space-evenly;
+  gap: 5px;
 }
