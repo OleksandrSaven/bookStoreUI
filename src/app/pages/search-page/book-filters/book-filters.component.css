@@ -1,0 +1,16 @@
+.book-search-filter-form {
+  padding: 16px 20px;
+  background: var(--dark-color);
+  color: var(--light-color);
+  align-items: start;
+}
+
+.two-columns {
+  display: flex;
+  gap: 20px;
+}
+
+.search-filter-form-label {
+  display: grid;
+  gap: 5px;
+}

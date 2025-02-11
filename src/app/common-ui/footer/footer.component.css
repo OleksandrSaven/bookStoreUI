@@ -1,0 +1,7 @@
+:host{
+  height: 200px;
+  margin-top: 10px;
+  background: var(--dark-color);
+  color: white;
+  flex-grow: 1;
+}

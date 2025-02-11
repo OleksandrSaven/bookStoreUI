@@ -3,14 +3,15 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {AuthService} from '../../auth/auth.service';
 import {NgClass, NgIf} from '@angular/common';
 import {passwordMatchValidator} from '../../auth/password-validator/password-match-validator';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-registration-page',
   imports: [
     ReactiveFormsModule,
     NgIf,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './registration-page.component.html',
   styleUrl: './registration-page.component.css'
