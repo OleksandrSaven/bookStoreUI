@@ -1,6 +1,11 @@
 <form class="book-search-filter-form" [formGroup]="searchForm">
   <div class="two-columns">
     <label class="form-input-group">
+      <span>Category</span>
+      <input type="text"  formControlName="category">
+    </label>
+
+    <label class="form-input-group">
       <span>Author</span>
       <input type="text" formControlName="author">
     </label>
@@ -9,10 +14,15 @@
       <span class>Title</span>
       <input type="text" formControlName="title">
     </label>
-
-    <label class="form-input-group">
-      <span>Category</span>
-      <input type="text"  formControlName="category">
-    </label>
   </div>
 </form>
+
+  <div class="paginator-wrapper">
+    <mat-paginator
+      [length]="totalElements"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      [pageIndex]="currentPage"
+      (page)="handlePageEvent($event)"
+    ></mat-paginator>
+  </div>

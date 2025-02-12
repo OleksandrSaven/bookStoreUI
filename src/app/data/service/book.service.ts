@@ -16,10 +16,21 @@ export class BookService {
   constructor() {
   }
 
-  filterBooks(params: Record<string, any>) {
-    return this.http.get<Page<Book>>(`${this.baseUrl}/books/search`, { params })
+  filterBooks(params: Record<string, any>, page: number, size: number) {
+    let pageParams = new HttpParams()
+      .set('page', page)
+      .set('size', size);
+
+    for (const key in params) {
+      if (params[key] !== undefined && params[key] !== '') {
+        pageParams = pageParams.set(key, params[key]);
+      }
+    }
+    return this.http.get<Page<Book>>(`${this.baseUrl}/books/search`, {params: pageParams})
       .pipe(
-      tap(res => {this.filteredBooks.set(res)})
-    )
+        tap(res => {
+          this.filteredBooks.set(res)
+        })
+      )
   }
 }

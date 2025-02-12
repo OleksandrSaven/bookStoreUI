@@ -1,6 +1,6 @@
 .book-search-filter-form {
   padding: 16px 20px;
-  background: var(--dark-color);
+  background: var(--dark-gray-color);
   color: var(--light-color);
   align-items: start;
 }

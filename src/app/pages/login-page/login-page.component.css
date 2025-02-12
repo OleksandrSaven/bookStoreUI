@@ -3,7 +3,8 @@
 }
 
 .full-screen-container {
-  background-image: url("/assets/images/login-background.jpeg");
+  /*background-image: url("/assets/images/login-background.jpeg");*/
+  background-color: var(--dark-gray-color);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -11,7 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
 }
 

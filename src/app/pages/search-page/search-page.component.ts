@@ -19,7 +19,6 @@ import {BookFiltersComponent} from './book-filters/book-filters.component';
 })
 export class SearchPageComponent {
   bookService = inject(BookService);
-  authService = inject(AuthService);
   currentPage = 0;
   totalElements = 0;
   pageSizeOptions = [1, 5, 10];
