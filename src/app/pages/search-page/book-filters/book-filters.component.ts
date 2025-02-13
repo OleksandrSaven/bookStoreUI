@@ -4,15 +4,16 @@ import {catchError, debounceTime, of, startWith, switchMap} from 'rxjs';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {BookService} from '../../../data/service/book.service';
-import {Router} from '@angular/router';
 import {AuthService} from '../../../auth/auth.service';
+import {CategorySelectorComponent} from '../../../common-ui/category-selector/category-selector.component';
 
 
 @Component({
   selector: 'app-book-filters',
   imports: [
     ReactiveFormsModule,
-    MatPaginator
+    MatPaginator,
+    CategorySelectorComponent
   ],
   templateUrl: './book-filters.component.html',
   styleUrl: './book-filters.component.css'
@@ -29,7 +30,7 @@ export class BookFiltersComponent {
   searchForm = this.fb.group({
     author: [''],
     title: [''],
-    category: [''],
+    categories: [''],
   })
 
   handlePageEvent(pageEvent: PageEvent) {
@@ -47,6 +48,10 @@ export class BookFiltersComponent {
       .subscribe(result => {
         this.totalElements = result.totalElements;
       })
+  }
+
+  onCategoriesSelected(selectedCategories: string) {
+    this.searchForm.patchValue({ categories: selectedCategories });
   }
 
   constructor() {

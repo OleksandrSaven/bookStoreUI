@@ -5,12 +5,43 @@
   align-items: start;
 }
 
-.two-columns {
+.columns-wrapper {
   display: flex;
   gap: 20px;
+  padding: 5px;
+  flex-wrap: wrap;
 }
 
 .search-filter-form-label {
   display: grid;
   gap: 5px;
+}
+
+.category-selector {
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.category-selector-control {
+  margin-top: auto;
+}
+
+.label-control {
+  height: 50px;
+  display: flex;
+  border-radius: 7px;
+  overflow: hidden;
+  width: 212px;
+  font-weight: 500;
+}
+
+.label-control input {
+  width: 100%;
+  padding: 25px 10px;
+  font-size: 16px;
+  background-color: var(--var-light-gray-color);
 }

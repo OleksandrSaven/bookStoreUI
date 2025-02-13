@@ -11,6 +11,7 @@
   --footer-text-color: #f8b400;
   --error-color: #e41818;
   --success-color: #4CAF50;
+  --var-light-gray-color: #e0e2ec;
 }
 
 body {
@@ -138,3 +139,6 @@ body {
 }
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
