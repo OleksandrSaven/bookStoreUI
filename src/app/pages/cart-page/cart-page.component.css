@@ -1,0 +1,7 @@
+:host{
+  display: flex;
+  min-height: calc(100dvh - 300px);
+  padding: 10px;
+  justify-content: center;
+  margin-top: 100px;
+}

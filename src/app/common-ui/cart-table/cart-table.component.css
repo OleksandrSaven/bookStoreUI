@@ -1,0 +1,19 @@
+/* cart-table.component.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--gray-color);
+}
+
+th, td {
+  text-align: left;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.icon{
+  color: var(--dark-color);
+}

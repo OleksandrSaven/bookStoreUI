@@ -33,4 +33,11 @@ export class BookService {
         })
       )
   }
+
+  getBooksByBookId(ids: number[]) {
+    const params = new HttpParams()
+      .set('ids', ids.join(','));
+    return this.http.get<Book[]>(`${this.baseUrl}/books/filtered`, { params })
+  }
 }
+

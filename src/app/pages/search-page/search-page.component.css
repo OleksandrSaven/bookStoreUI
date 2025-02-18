@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.search-container{
+
+}
+
 .book-wrapper{
   display: flex;
   flex-wrap: wrap;

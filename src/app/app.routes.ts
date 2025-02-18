@@ -4,11 +4,13 @@ import {RegistrationPageComponent} from './pages/registration-page/registration-
 import {SearchPageComponent} from './pages/search-page/search-page.component';
 import {LayoutComponent} from './common-ui/layout/layout.component';
 import {canActivateAuth} from './auth/accsess.guard';
+import {CartPageComponent} from './pages/cart-page/cart-page.component';
 
 export const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
       {path: '', component: SearchPageComponent},
+      {path: 'cart', component: CartPageComponent},
     ], canActivate: [canActivateAuth]
   },
   {path: 'login', component: LoginPageComponent},

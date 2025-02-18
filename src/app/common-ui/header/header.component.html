@@ -1,1 +1,28 @@
-<p>header works!</p>
+<div class="header-container">
+  <div class="header-menu-container">
+    <div class="logo">
+      <img ngSrc="assets/images/booklogo.jpg" alt="Logo"/>
+    </div>
+    <nav class="nav-links">
+      <a href="" class="nav-link">Home</a>
+      <a href="/books" class="nav-link">About</a>
+      <a href="/cart" class="nav-link">News</a>
+      <a href="/orders" class="nav-link">Orders</a>
+      <a href="/profile" class="nav-link">Profile</a>
+    </nav>
+    <div class="user-info">
+      <span class="user-name">{{ username }}</span>
+      <button class="logout-btn" (click)="logout()">
+        <i class="fa fa-sign-out"></i> Logout
+      </button>
+    </div>
+  </div>
+
+  <div class="header-cart-info">
+    <div [routerLink]="'/cart'">
+      <div class="header-icon-container">
+        <app-cart-icons></app-cart-icons>
+      </div>
+    </div>
+  </div>
+</div>

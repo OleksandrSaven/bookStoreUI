@@ -5,6 +5,7 @@ import {tap} from 'rxjs';
 import {RegistrationResponse} from '../data/interfaces/registration-response.interface';
 import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
+import {UserInfo} from '../data/interfaces/user-info.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,9 @@ export class AuthService {
     shippingAddress: string,
   }){
     return this.http.post<RegistrationResponse>(`${this.baseUrl}/register`, payload)
+  }
+
+  userInfo() {
+    return this.http.get<UserInfo>(`${this.baseUrl}/info`)
   }
 }
