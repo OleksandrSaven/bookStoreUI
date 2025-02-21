@@ -1,3 +1,9 @@
-<div class="table-container">
-  <app-cart-table></app-cart-table>
-</div>
+@if (cartItemCount() !== 0) {
+  <div class="table-container">
+    <app-cart-table></app-cart-table>
+  </div>
+} @else {
+  <div class="cart-image">
+    <img src="assets/images/empty-cart.jpeg" (click)="cartClick()">
+  </div>
+}

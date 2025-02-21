@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {CartTableComponent} from '../../common-ui/cart-table/cart-table.component';
+import {CartService} from '../../data/service/cart-service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cart-pages',
@@ -10,5 +12,14 @@ import {CartTableComponent} from '../../common-ui/cart-table/cart-table.componen
   styleUrl: './cart-page.component.css'
 })
 export class CartPageComponent {
+  cartService = inject(CartService);
+  router = inject(Router);
 
+  cartItemCount() {
+    return this.cartService.countItem();
+  }
+
+  cartClick(){
+    this.router.navigate(['']);
+  }
 }

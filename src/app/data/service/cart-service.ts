@@ -30,6 +30,10 @@ export class CartService {
     return this.http.get<ShoppingCart>(`${this.baseUrl}/cart`)
   }
 
+  updateCartItemQuantity(id: number, payload: { quantity: number } ) {
+    return this.http.put<CartItem>(`${this.baseUrl}/cart/cart-item/${id}`, payload )
+  }
+
   deleteCartItem(id: number) {
     return this.http.delete(`${this.baseUrl}/cart/cart-items/${id}`)
   }

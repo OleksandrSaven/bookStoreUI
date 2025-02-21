@@ -3,7 +3,9 @@
   height: 80px;
   background-color: var(--super-dark-gray);
   color: var(--light-color);
-  /*padding: 5px;*/
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-container {
